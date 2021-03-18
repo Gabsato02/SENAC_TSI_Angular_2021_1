@@ -1,0 +1,60 @@
+.player
+    width: 500px
+    margin: 0 auto
+    text-align: center
+    display: flex
+    flex-direction: column
+    align-items: center
+    &__name
+        color: gold
+        -webkit-text-stroke: 1.5px purple
+        font-size: 50px
+        margin: 0 auto
+    &__image
+        width: 300px
+        box-shadow: 2px 2px 5px black
+    &__input
+        text-align: center
+
+.champion
+    color: purple
+    background: gold
+    font-weight: bold
+    cursor: pointer
+    transition: all .3s
+    box-shadow: 2px 2px 5px black
+    &:hover
+        transform: scale(1.2)
+
+.players__images
+    width: 500px 
+    margin: 0 auto  
+    display: flex 
+    justify-content: space-evenly
+    &--PF
+        height: 200px
+        margin: 0 25px
+        border: 3px solid purple
+        border-radius: 20%
+        box-shadow: 2px 2px 5px gold
+    &--PG
+        height: 200px  
+        margin: 0 25px
+        border: 2px solid gold
+        border-radius: 50%
+        box-shadow: 2px 2px 5px purple
+    &--C 
+        height: 200px
+        margin: 0 25px
+        border: 3px solid purple
+        border-radius: 20%
+        box-shadow: 2px 2px 5px gold
+
+.button
+    border: 3px solid purple
+    background-color: gold
+    color: purple
+    box-shadow: 2px 2px 5px black
+    font-weight: bold
+    &:hover
+        transform: scale(1.1)
