@@ -1,0 +1,26 @@
+<h2>Meus jogos</h2>
+
+<ul>
+    <li *ngFor="let game of games" (click)="editGame(game);">
+        {{ game.name }} - {{ game.status }}
+        <button (click)="removeGame(game.id);">X</button>
+    </li>
+</ul>
+
+<div *ngIf="selectedGame" style="display: flex; flex-direction: column; width: 150px;">
+    <label style='margin: 10px 10px 0 0;'>Nome</label>
+    <input type="text" placeholder="ex. Uncharted" [(ngModel)]="selectedGame.name">
+
+    <label style='margin: 10px 10px 0 0;'>Gênero</label>
+    <input type="text" placeholder="ex. Ação"  [(ngModel)]="selectedGame.genre">
+
+    <label style='margin: 10px 10px 0 0;'>Plataforma</label>
+    <input type="text" placeholder="ex. PS4"  [(ngModel)]="selectedGame.platform">
+
+    <label style='margin: 10px 10px 0 0;'>Status</label>
+    <input type="text" placeholder="ex. Favorito"  [(ngModel)]="selectedGame.status">
+
+    <button (click)="saveGame();" style="margin-top: 10px;">Salvar</button>
+</div>
+
+<button (click)="newGame();" style="margin-top: 10px;">Novo Jogo</button>

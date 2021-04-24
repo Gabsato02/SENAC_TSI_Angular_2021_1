@@ -1,0 +1,46 @@
+<div class='wrapper'>
+    <div class='form'>
+        <h2>Two Way Data Binding</h2>
+        <h3>Exemplos</h3>
+
+        <input type='text' [(ngModel)]="nome">
+
+        <span>Nome: {{ nome }} </span>
+
+        <button (click)="limpar();">Limpar</button>
+    </div>
+
+    <div class='form'>
+        <h2>Two Way Data Binding</h2>
+        <h3>Exemplo 2</h3>
+        
+        <select [(ngModel)]='estado'>
+            <option value="sp">São Paulo</option>
+            <option value="rj">Rio de Janeiro</option>
+            <option value="pe">Pernambuco</option>
+            <option value="mg">Minas Gerais</option>
+        </select>
+
+        <span>Estado selecionado: {{ estado | uppercase }}</span>
+    </div>
+
+    <div class='form'>
+        <h2>Two Way Data Binding</h2>
+        <h3>Exercício 1</h3>
+
+        <input type='number' [(ngModel)]="num1">
+        <input type='number' [(ngModel)]="num2">     
+
+        <span>Soma: {{ sum() }} </span>
+    </div>
+
+    <div class='form'>
+        <h2>Two Way Data Binding</h2>
+        <h3>Exercício 2</h3>
+        
+        <label>Digite uma raça de cachorro (pitbull, pastor, bulldog):</label>
+        <input type='text' [(ngModel)]="dog">
+        <img *ngIf="dog" src="/assets/images/{{ dog | lowercase }}.jpg">
+    </div>
+
+</div>
