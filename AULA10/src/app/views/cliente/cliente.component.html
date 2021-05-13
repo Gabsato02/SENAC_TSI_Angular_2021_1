@@ -1,0 +1,31 @@
+<h2 class="display-6">Consulta de Clientes</h2>
+<button class='btn btn-dark text-light btn-lg m-1' (click)="listar()">Listar</button>
+<button class='btn btn-success text-light btn-lg m-1' (click)="novo()">Novo</button>
+
+<div class='mt-5 d-flex' *ngIf="cliente">
+  <input class='form-control w-50 m-1' type='text' placeholder="Nome" [(ngModel)]="cliente.nome">
+  <input class='form-control w-50 m-1' type='text' placeholder="CPF" [(ngModel)]="cliente.cpf">
+
+  <button class='btn btn-danger text-light btn-sm m-1' (click)="limpar()">Cancelar</button>
+  <button class='btn btn-success text-light btn-sm m-1' (click)="salvar()">Salvar</button>
+</div>
+
+<table class="table table-striped table-border shadow-sm mt-5 w-100" *ngIf="clientes">
+  <thead class='table-dark'>
+    <tr>
+      <th>Nome</th>
+      <th>CPF</th>
+      <th *ngIf="modoEdicao">Gerenciar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of clientes" (click)="editar(cliente)" style="cursor: pointer;">
+      <td>{{ cliente.nome }}</td>
+      <td>{{ cliente.cpf }}</td>
+      <td *ngIf="modoEdicao">
+        <button class='btn btn-sm btn-danger' (click)="apagar(cliente.id)">Apagar</button>
+      </td>
+    </tr>
+  </tbody>
+
+

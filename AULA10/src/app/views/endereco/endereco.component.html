@@ -1,0 +1,50 @@
+<h2 class="display-6">Consulta de CEP</h2>
+
+<input
+  class="form-control w-25"
+  type="text"
+  placeholder="Digite seu CEP..."
+  [(ngModel)]="cep"
+  style="display: block; margin-bottom: 20px"
+/>
+<button class="btn btn-dark text-light btn-lg" (click)="consultar()">
+  Consultar
+</button>
+
+<img src="/assets/loading.gif" *ngIf="isLoading" />
+
+<table
+  class="table table-striped table-border shadow-sm mt-5 w-100"
+  *ngIf="endereco"
+>
+  <thead class="table-dark">
+    <tr>
+      <th>CEP</th>
+      <th>Logradouro</th>
+      <th>Complemento</th>
+      <th>Bairro</th>
+      <th>Localidade</th>
+      <th>UF</th>
+      <th>IBGE</th>
+      <th>GIA</th>
+      <th>DDD</th>
+      <th>SIAFI</th>
+      <th>GIA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ endereco.cep }}</td>
+      <td>{{ endereco.logradouro }}</td>
+      <td>{{ endereco.complemento }}</td>
+      <td>{{ endereco.bairro }}</td>
+      <td>{{ endereco.localidade }}</td>
+      <td>{{ endereco.uf }}</td>
+      <td>{{ endereco.ibge }}</td>
+      <td>{{ endereco.gia }}</td>
+      <td>{{ endereco.ddd }}</td>
+      <td>{{ endereco.siafi }}</td>
+      <td>{{ endereco.gia }}</td>
+    </tr>
+  </tbody>
+</table>
